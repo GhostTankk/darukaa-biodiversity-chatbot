@@ -11,6 +11,11 @@ Two input paths, per challenge requirement #5:
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import json
 
 import streamlit as st
@@ -19,6 +24,8 @@ from dotenv import load_dotenv
 from src.conversation import ConversationManager
 from src.knowledge_base import KnowledgeBase
 from src.reasoning_engine import ReasoningEngine
+
+load_dotenv()
 
 load_dotenv()  # local runs: reads .env for GEMINI_API_KEY. On Streamlit Cloud, use the Secrets panel instead (see README).
 
