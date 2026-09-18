@@ -1,0 +1,110 @@
+[
+  {
+    "id": "kb001",
+    "topic": "soil_carbon",
+    "trigger_conditions": {
+      "soil_organic_carbon_pct": {"max": 0.8},
+      "land_use": ["monoculture", "cropland", "arable"]
+    },
+    "recommendation": "Introduce legume-based cover crops (e.g. cowpea, clover, vetch) in rotation with the main crop, and avoid leaving soil bare between growing seasons.",
+    "reasoning": "Legumes fix atmospheric nitrogen via rhizobial symbiosis and add root biomass and residue carbon to the topsoil. Continuous cover also reduces oxidative carbon loss from tillage and erosion, and the added organic matter feeds soil microbial and fungal communities that underpin nutrient cycling.",
+    "impacted_metrics": ["soil_organic_carbon_pct", "microbial_diversity", "pollinator_activity", "water_holding_capacity"],
+    "expected_effect": "Soil organic carbon increases by roughly 10-25% over 2-3 years in degraded cropland under cover cropping regimes, based on multi-site meta-analyses.",
+    "time_horizon": "medium",
+    "confidence": "high",
+    "sources": [
+      {"name": "FAO - Soil Organic Carbon: the hidden potential", "org": "Food and Agriculture Organization"},
+      {"name": "Poeplau & Don, 2015, Agriculture, Ecosystems & Environment - meta-analysis of cover crop SOC effects", "org": "peer-reviewed meta-analysis"}
+    ]
+  },
+  {
+    "id": "kb002",
+    "topic": "land_use_fragmentation",
+    "trigger_conditions": {
+      "land_use": ["monoculture", "intensive_agriculture"],
+      "habitat_diversity_index": {"max": 0.4}
+    },
+    "recommendation": "Convert 10-15% of field margins and unproductive corners into agroforestry strips or native hedgerows connecting nearby habitat patches.",
+    "reasoning": "Monocultures fragment habitat into isolated patches, cutting off gene flow and forcing species into small, vulnerable populations. Hedgerows and tree strips act as ecological corridors, allowing pollinators, birds, and small mammals to move between patches, which raises effective population sizes and species richness.",
+    "impacted_metrics": ["species_richness", "habitat_diversity_index", "pollinator_activity"],
+    "expected_effect": "Field-margin agroforestry has been associated with 20-50% increases in local pollinator and bird species richness in temperate and semi-arid agricultural landscapes.",
+    "time_horizon": "long",
+    "confidence": "medium",
+    "sources": [
+      {"name": "IPBES Global Assessment Report on Biodiversity and Ecosystem Services (2019)", "org": "Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services"},
+      {"name": "IPCC AR6 WG2 Chapter 2 - Terrestrial and Freshwater Ecosystems", "org": "Intergovernmental Panel on Climate Change"}
+    ]
+  },
+  {
+    "id": "kb003",
+    "topic": "water_scarcity_semiarid",
+    "trigger_conditions": {
+      "rainfall": ["low", "erratic"],
+      "region_type": ["semi-arid", "arid"]
+    },
+    "recommendation": "Adopt intercropping or agroforestry with deep-rooted, drought-tolerant species (e.g. Gliricidia, pigeon pea) alongside the main crop, combined with mulching to reduce surface evaporation.",
+    "reasoning": "Deep-rooted companion species access moisture from lower soil horizons and reduce competition with shallow-rooted staple crops, while their canopy and leaf litter reduce soil surface temperature and evapotranspiration. This stabilizes soil moisture through dry spells, which is the limiting factor for both crop survival and understorey biodiversity in semi-arid systems.",
+    "impacted_metrics": ["soil_moisture", "species_richness", "soil_organic_carbon_pct"],
+    "expected_effect": "Agroforestry intercropping in semi-arid zones has been shown to improve dry-season soil moisture retention and reduce crop failure risk, with associated gains in understorey plant and insect diversity.",
+    "time_horizon": "medium",
+    "confidence": "medium",
+    "sources": [
+      {"name": "FAO - Agroforestry for Landscape Restoration", "org": "Food and Agriculture Organization"},
+      {"name": "IPCC AR6 WG2 - Africa and Asia regional chapters (drought adaptation)", "org": "Intergovernmental Panel on Climate Change"}
+    ]
+  },
+  {
+    "id": "kb004",
+    "topic": "pollution_runoff",
+    "trigger_conditions": {
+      "pollution_level": ["high", "moderate"],
+      "land_use": ["intensive_agriculture", "cropland"]
+    },
+    "recommendation": "Establish vegetated buffer strips (3-10m wide) of native grasses and shrubs along field edges and waterways, and reduce synthetic fertilizer application to soil-test-based rates.",
+    "reasoning": "Buffer strips physically intercept sediment, nitrogen, and phosphorus in surface runoff before it reaches waterways, and their root systems take up residual nutrients. Reducing blanket fertilizer application (as opposed to rate-matching to measured soil nutrient levels) cuts the pollutant load at the source rather than only mitigating it downstream.",
+    "impacted_metrics": ["pollution_level", "species_richness", "habitat_diversity_index"],
+    "expected_effect": "Vegetated buffer strips typically reduce nitrogen and phosphorus runoff by 30-60% and measurably improve downstream aquatic species richness.",
+    "time_horizon": "short",
+    "confidence": "high",
+    "sources": [
+      {"name": "FAO - Water Pollution from Agriculture: a global review", "org": "Food and Agriculture Organization"},
+      {"name": "EPA - Riparian Buffer Width, Vegetative Cover, and Nitrogen Removal Effectiveness", "org": "U.S. Environmental Protection Agency"}
+    ]
+  },
+  {
+    "id": "kb005",
+    "topic": "deforestation_habitat_loss",
+    "trigger_conditions": {
+      "deforestation_rate": ["high", "moderate"],
+      "habitat_diversity_index": {"max": 0.5}
+    },
+    "recommendation": "Prioritize assisted natural regeneration (ANR) of degraded forest edges over new plantation, protecting existing seed-bearing trees and stumps rather than clearing and replanting.",
+    "reasoning": "ANR leverages existing root systems, seed banks, and mycorrhizal networks already adapted to local conditions, which regenerate structurally complex, multi-species forest far faster and at lower cost than monoculture replanting. Structural complexity (canopy layers, deadwood, understorey) is what drives habitat diversity for fauna, not tree count alone.",
+    "impacted_metrics": ["habitat_diversity_index", "species_richness", "soil_organic_carbon_pct"],
+    "expected_effect": "Assisted natural regeneration has been documented to restore canopy cover and native species diversity at a fraction of the cost and time of active replanting, per multiple tropical restoration case studies.",
+    "time_horizon": "long",
+    "confidence": "medium",
+    "sources": [
+      {"name": "FAO & IUCN - Assisted Natural Regeneration for Effective Low-Cost Forest Restoration", "org": "Food and Agriculture Organization / IUCN"},
+      {"name": "IPCC AR6 WG3 - AFOLU (Agriculture, Forestry and Other Land Use) mitigation chapter", "org": "Intergovernmental Panel on Climate Change"}
+    ]
+  },
+  {
+    "id": "kb006",
+    "topic": "temperature_stress_biodiversity",
+    "trigger_conditions": {
+      "temperature_anomaly_c": {"min": 1.5},
+      "species_richness": {"max": 0.5}
+    },
+    "recommendation": "Increase structural shade cover (tree canopy or shade netting at 20-30% density) over the most temperature-sensitive zones, and prioritize microhabitat features like log piles, ponds, or rock piles as thermal refugia.",
+    "reasoning": "Rising local temperatures push ectothermic species and temperature-sensitive flora past physiological thresholds faster than they can migrate or adapt. Structural shade and microhabitat features create localized cooler microclimates that act as refugia, buying time for species to persist while landscape-level conditions change.",
+    "impacted_metrics": ["species_richness", "habitat_diversity_index"],
+    "expected_effect": "Microclimate buffering via shade cover can reduce peak ground-level temperatures by several degrees Celsius, measurably reducing local extinction risk for temperature-sensitive species.",
+    "time_horizon": "short",
+    "confidence": "medium",
+    "sources": [
+      {"name": "IPCC AR6 WG2 Chapter 2 - Terrestrial and Freshwater Ecosystems (microclimate refugia)", "org": "Intergovernmental Panel on Climate Change"},
+      {"name": "IPBES Global Assessment Report on Biodiversity and Ecosystem Services (2019)", "org": "Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services"}
+    ]
+  }
+]
